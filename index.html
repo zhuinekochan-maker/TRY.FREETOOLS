@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALexATOOLS - Tools Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1>ALeх<span class="highlight">ATOOLS</span></h1>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </div>
+
+    <!-- Featured Tools Section -->
+    <div class="featured-section">
+        <h2>Featured Tools</h2>
+        <div class="tools-list">
+            <!-- IQC Generator -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <h3>IQC Generator</h3>
+                </div>
+                <div class="tool-desc">Free For You</div>
+                <button class="tool-btn" onclick="openTool('iqc')">Buka Tool</button>
+            </div>
+
+            <!-- Tanya Pak Ustad -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <h3>Tanya Pak Ustad</h3>
+                </div>
+                <div class="tool-desc">Free For You</div>
+                <button class="tool-btn" onclick="openTool('ustad')">Buka Tool</button>
+            </div>
+
+            <!-- URL Downloader -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <h3>URL Downloader</h3>
+                </div>
+                <div class="tool-desc">All Platform</div>
+                <button class="tool-btn" onclick="openTool('downloader')">Buka Tool</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IQC Generator Modal -->
+    <div id="iqcModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeTool()">&times;</button>
+            <h2>IQC Generator</h2>
+            
+            <div class="iqc-container">
+                <div class="input-section">
+                    <label>Custom Text:</label>
+                    <textarea id="iqcText" placeholder="Masukkan text yang ingin di-blur..." rows="4"></textarea>
+                    
+                    <label>Background Color:</label>
+                    <div class="color-options">
+                        <input type="color" id="bgColor" value="#ff1744" title="Pilih warna background">
+                        <span id="bgColorValue">#ff1744</span>
+                    </div>
+                    
+                    <label>Blur Amount:</label>
+                    <div class="blur-control">
+                        <input type="range" id="blurAmount" min="0" max="20" value="8">
+                        <span id="blurValue">8px</span>
+                    </div>
+                    
+                    <button class="generate-btn" onclick="generateIQC()">Generate</button>
+                </div>
+                
+                <div class="preview-section">
+                    <label>Preview:</label>
+                    <div id="iqcPreview" class="iqc-preview"></div>
+                    <button class="download-btn" onclick="downloadIQC()" style="display: none;" id="downloadIqcBtn">⬇️ Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tanya Pak Ustad Modal -->
+    <div id="ustadModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeTool()">&times;</button>
+            <h2>Tanya Pak Ustad</h2>
+            
+            <div class="ustad-container">
+                <label>Pertanyaan:</label>
+                <textarea id="ustadQuestion" placeholder="Tanya sesuatu ke Pak Ustad..." rows="4"></textarea>
+                
+                <button class="generate-btn" onclick="generateUstad()">Tanya</button>
+                
+                <div id="ustadResult" class="ustad-result" style="display: none;">
+                    <p id="ustadAnswer"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- URL Downloader Modal -->
+    <div id="downloaderModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeTool()">&times;</button>
+            <h2>URL Downloader</h2>
+            
+            <div class="downloader-container">
+                <label>Paste URL:</label>
+                <input type="text" id="urlInput" placeholder="https://example.com/file.mp4">
+                
+                <button class="generate-btn" onclick="downloadURL()">Download</button>
+                
+                <div id="downloaderResult" class="downloader-result" style="display: none;">
+                    <p id="downloaderMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 ALexATOOLS - Created by ALxZK</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
